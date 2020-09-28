@@ -1,2 +1,2 @@
-# awesome-learning-management
-A simple learning management application.
+# awesome-erp
+A simple but awesome Enterprise Resource Planning application.
