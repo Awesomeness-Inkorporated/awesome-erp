@@ -1,0 +1,25 @@
+version: '3.6'
+services:
+  postgres:
+    container_name: erp_local_db
+    image: postgres:12
+    restart: always
+    ports:
+      - "${DB_PORT}:5432"
+    volumes:
+      - erp_db_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: ${DB_DATABASE}
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    networks:
+      - default
+
+networks:
+  default:
+    ipam:
+      config:
+        - subnet: 192.168.11.0/24
+
+volumes:
+  erp_db_data:
