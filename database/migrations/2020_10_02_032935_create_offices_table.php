@@ -18,7 +18,7 @@ class CreateOfficesTable extends Migration
             $table->text('name');
             $table->foreignId('address_id')->constrained('addresses');
             $table->foreignId('primary_employee_id')->constrained('employees');
-            $table->timestamps();
+            $table->timestampsTz();
         });
     }
 

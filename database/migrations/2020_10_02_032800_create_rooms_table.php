@@ -17,7 +17,7 @@ class CreateRoomsTable extends Migration
             $table->id();
             $table->text('identifier');
             $table->foreignId('room_type_id')->constrained();
-            $table->timestamps();
+            $table->timestampsTz();
         });
     }
 

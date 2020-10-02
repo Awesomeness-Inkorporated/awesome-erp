@@ -20,7 +20,7 @@ class CreateDepartmentsTable extends Migration
             $table->foreignId('lead_employee_id')->constrained('employees');
             $table->foreignId('address_id')->constrained('addresses');
             $table->text('name');
-            $table->timestamps();
+            $table->timestampsTz();
         });
     }
 

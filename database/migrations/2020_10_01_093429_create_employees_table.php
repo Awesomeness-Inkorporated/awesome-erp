@@ -23,7 +23,7 @@ class CreateEmployeesTable extends Migration
             $table->foreignId('job_title_id'); // TODO: Add reference to job_titles table
             $table->foreignId('emergency_contact_id')->constrained('addresses');
             $table->foreignId('room_id'); // TODO: Add reference to rooms table
-            $table->timestamps();
+            $table->timestampsTz();
         });
     }
 
