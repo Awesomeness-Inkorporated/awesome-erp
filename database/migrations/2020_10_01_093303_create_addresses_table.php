@@ -28,7 +28,7 @@ class CreateAddressesTable extends Migration
             $table->text('zip')->nullable();
             $table->text('phone')->nullable();
             $table->text('email')->nullable();
-            $table->timestamps();
+            $table->timestampsTz();
         });
     }
 
