@@ -15,6 +15,11 @@ class CreateDepartmentsTable extends Migration
     {
         Schema::create('departments', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('parent_department_id')->constrained('departments');
+            $table->bigInteger('office_id');
+            $table->foreignId('lead_employee_id')->constrained('employees');
+            $table->foreignId('address_id')->constrained('addresses');
+            $table->text('name');
             $table->timestamps();
         });
     }
