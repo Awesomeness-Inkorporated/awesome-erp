@@ -16,7 +16,7 @@ class CreateOfficesTable extends Migration
         Schema::create('offices', function (Blueprint $table) {
             $table->id();
             $table->text('name');
-            $table->foreignId('address_id')->constrained('addresses');
+            $table->foreignId('address_id')->constrainew();
             $table->foreignId('primary_employee_id')->constrained('employees');
             $table->timestampsTz();
         });
