@@ -10,23 +10,23 @@ class Department extends Model
     use HasFactory;
 
     protected $fillable = [
-      'office_id',
-      'name',
-      'parent_department_id',
-      'lead_employee_id',
-      'address_id',
+        'office_id',
+        'name',
+        'parent_department_id',
+        'lead_employee_id',
+        'address_id',
     ];
 
     public function office(){
-      return $this->belongsTo(Office::class);
+        return $this->belongsTo(Office::class);
     }
   
     public function parent_department(){
-      return $this->belongsTo(Department::class, "parent_department_id");
+        return $this->belongsTo(Department::class, "parent_department_id");
     }
 
     public function address(){
-      return $this->belongsTo(Address::class);
+        return $this->belongsTo(Address::class);
     }
 
 }
