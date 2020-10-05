@@ -27,7 +27,6 @@ class Department extends Model
 
     public function address(){
       return $this->belongsTo(Address::class);
-      /* TO DO: add return $this->hasMany(Department::class); to the Address Model (can't do this until changes are merged)*/
     }
 
 }
