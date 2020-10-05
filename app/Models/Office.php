@@ -21,4 +21,5 @@ class Office extends Model
 
     public function department(){
     return $this->hasMany(Office::class);
+    }
 }
