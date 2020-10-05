@@ -16,10 +16,10 @@ class Office extends Model
     ];
     
     public function address(){
-    return $this->belongsTo(Address::class);
+        return $this->belongsTo(Address::class);
     }
 
     public function department(){
-    return $this->hasMany(Office::class);
+        return $this->hasMany(Office::class);
     }
 }

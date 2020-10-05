@@ -17,13 +17,17 @@ class Department extends Model
       'address_id',
     ];
 
-    public function address(){
-        return $this->belongsTo(Address::class);
-        /* TO DO: add return $this->hasMany(Department::class); to the Address Model */
-    }
-
     public function office(){
       return $this->belongsTo(Office::class);
-  }
+    }
+  
+    public function parent_department(){
+      return $this->belongsTo(Department::class, "parent_department_id");
+    }
+
+    public function address(){
+      return $this->belongsTo(Address::class);
+      /* TO DO: add return $this->hasMany(Department::class); to the Address Model (can't do this until changes are merged)*/
+    }
 
 }
