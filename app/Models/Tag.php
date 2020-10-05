@@ -13,4 +13,8 @@ class Tag extends Model
         'name',
         'project_id'
     ];
+
+    public function tag_task(){
+        return $this->hasMany(TagTask::class);
+    }
 }

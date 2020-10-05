@@ -17,6 +17,10 @@ class Contact extends Model
         'job_title_id'
     ];
 
+    public function project(){
+        return $this->hasMany(Project::class);
+    }
+
 //    public function address(){
 //        return $this->hasOne(Address::class);
 //    }

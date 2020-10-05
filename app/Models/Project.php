@@ -17,4 +17,7 @@ class Project extends Model
         'contact_id',
         'category_id'
     ];
+    public function tag(){
+        return $this->hasMany(Tag::class);
+    }
 }
