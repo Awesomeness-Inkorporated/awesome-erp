@@ -14,4 +14,7 @@ protected $fillable = [
     'text',
 ];
 
+public function room(){
+    return $this->hasMany(Room::class);
+}
 }

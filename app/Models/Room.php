@@ -13,4 +13,9 @@ class Room extends Model
         'identifier',
         'room_type_id',
     ];
+
+    public function room_type(){
+        return $this->belongsTo(Room_Type::class);
+    }
+
 }
