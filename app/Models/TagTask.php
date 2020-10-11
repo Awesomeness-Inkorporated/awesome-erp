@@ -13,4 +13,12 @@ class TagTask extends Model
         'tag_id',
         'task_id'
     ];
+
+    public function tags() {
+        return $this->hasMany(Tag::class);
+    }
+
+    public function tasks() {
+        return $this->hasMany(Task::class);
+    }
 }

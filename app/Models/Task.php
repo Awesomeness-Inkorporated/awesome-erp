@@ -12,7 +12,13 @@ class Task extends Model
     protected $fillable = [
         'name'
     ];
+
     public function tag_task(){
         return $this->hasMany(TagTask::class);
     }
+
+    public function tags() {
+        return $this->hasManyThrough(Tag::class, TagTask::class);
+    }
+
 }

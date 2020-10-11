@@ -12,4 +12,8 @@ class JobTitle extends Model
     protected $fillable = [
         'title',
     ];
+
+    public function employees() {
+        return $this->hasMany(Employee::class);
+    }
 }

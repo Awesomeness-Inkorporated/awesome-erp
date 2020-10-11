@@ -24,8 +24,24 @@ class Address extends Model
         'phone',
         'email',
     ];
-  
-    public function department(){
-        return $this->hasMany(Department::class);
+
+    public function department() {
+        return $this->hasOne(Department::class);
+    }
+
+    public function employee() {
+        return $this->hasOne(Employee::class);
+    }
+
+    public function employee_emergency_contact() {
+        return $this->hasOne(Employee::class, 'emergency_contact_id');
+    }
+
+    public function office() {
+        return $this->hasOne(Office::class);
+    }
+
+    public function contact() {
+        return $this->hasOne(Contact::class);
     }
 }

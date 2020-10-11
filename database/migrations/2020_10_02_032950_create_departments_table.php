@@ -15,12 +15,16 @@ class CreateDepartmentsTable extends Migration
     {
         Schema::create('departments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('parent_department_id')->constrained('departments');
-            $table->foreignId('office_id')->constrained();
-            $table->foreignId('lead_employee_id')->constrained('employees');
-            $table->foreignId('address_id')->constrained();
             $table->text('name');
+            $table->foreignId('parent_department_id')->nullable()->constrained('departments');
+            $table->foreignId('office_id')->nullable()->constrained();
+            $table->foreignId('lead_employee_id')->nullable()->constrained('employees');
+            $table->foreignId('address_id')->nullable()->constrained();
             $table->timestampsTz();
+        });
+
+        Schema::table('employees', function (Blueprint $table) {
+            $table->foreignId('department_id')->after('last_name')->nullable()->constrained();
         });
     }
 

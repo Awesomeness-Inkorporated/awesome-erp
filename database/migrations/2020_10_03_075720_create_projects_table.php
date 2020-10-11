@@ -17,10 +17,10 @@ class CreateProjectsTable extends Migration
             $table->id();
             $table->text('name');
             $table->text('description')->nullable();
-            $table->foreignId('status')->constrained();
-            $table->foreignId('lead_employee_id')->constrained('employees');
-            $table->foreignId('client_id')->constrained();
-            $table->foreignId('category_id')->constrained();
+            $table->foreignId('status_id')->constrained();
+            $table->foreignId('lead_employee_id')->nullable()->constrained('employees');
+            $table->foreignId('client_id')->nullable()->constrained();
+            $table->foreignId('category_id')->nullable()->constrained();
 
             $table->timestamps();
         });
