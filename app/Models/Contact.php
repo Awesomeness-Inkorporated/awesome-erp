@@ -17,11 +17,11 @@ class Contact extends Model
         'job_title_id'
     ];
 
-    public function project(){
+    public function projects() {
         return $this->hasMany(Project::class);
     }
 
-//    public function address(){
-//        return $this->hasOne(Address::class);
-//    }
+   public function address() {
+       return $this->belongsTo(Address::class);
+   }
 }

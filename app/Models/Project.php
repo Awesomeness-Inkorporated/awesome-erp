@@ -12,12 +12,29 @@ class Project extends Model
     protected $fillable = [
         'name',
         'description',
-        'status',
+        'status_id',
         'lead_employee_id',
         'contact_id',
         'category_id'
     ];
-    public function tag(){
+
+    public function status() {
+        return $this->belongsTo(Status::class);
+    }
+
+    public function lead_employee() {
+        return $this->belongsTo(Employee::class, "lead_employee_id");
+    }
+
+    public function contact() {
+        return $this->belongsTo(Contact::class);
+    }
+
+    public function category() {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function tag() {
         return $this->hasMany(Tag::class);
     }
 }

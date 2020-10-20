@@ -17,15 +17,19 @@ class Department extends Model
         'address_id',
     ];
 
-    public function office(){
+    public function office() {
         return $this->belongsTo(Office::class);
     }
-  
+
     public function parent_department(){
         return $this->belongsTo(Department::class, "parent_department_id");
     }
 
-    public function address(){
+    public function lead_employee() {
+        return $this->belongsTo(Employee::class, "lead_employee_id");
+    }
+
+    public function address() {
         return $this->belongsTo(Address::class);
     }
 

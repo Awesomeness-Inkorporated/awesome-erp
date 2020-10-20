@@ -14,7 +14,16 @@ class Tag extends Model
         'project_id'
     ];
 
-    public function tag_task(){
+    public function tag_task() {
         return $this->hasMany(TagTask::class);
     }
+
+    public function project() {
+        return $this->belongsTo(Project::class);
+    }
+
+    public function tasks() {
+        return $this->hasManyThrough(Task::class, TagTask::class);
+    }
+
 }

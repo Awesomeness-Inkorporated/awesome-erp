@@ -18,8 +18,8 @@ class CreateContactsTable extends Migration
             $table->text('first_name');
             $table->text('middle_name')->nullable();
             $table->text('last_name');
-            $table->foreignId('address_id')->constrained();
-            $table->foreignId('job_title_id')->constrained();
+            $table->foreignId('address_id')->nullable()->constrained();
+            $table->foreignId('job_title_id')->nullable()->constrained();
             $table->timestamps();
         });
     }

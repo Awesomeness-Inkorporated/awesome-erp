@@ -18,11 +18,11 @@ class CreateEmployeesTable extends Migration
             $table->text('first_name');
             $table->text('middle_name')->nullable();
             $table->text('last_name');
-            $table->foreignId('address_id')->constrained();
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId('job_title_id')->constrained();
-            $table->foreignId('emergency_contact_id')->constrained('addresses');
-            $table->foreignId('room_id')->constrained();
+            $table->foreignId('address_id')->nullable()->constrained();
+            $table->foreignId('user_id')->nullable()->constrained();
+            $table->foreignId('job_title_id')->nullable()->constrained();
+            $table->foreignId('emergency_contact_id')->nullable()->constrained('addresses');
+            $table->foreignId('room_id')->nullable()->constrained();
             $table->timestampsTz();
         });
     }

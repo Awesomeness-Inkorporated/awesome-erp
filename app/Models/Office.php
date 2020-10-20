@@ -14,12 +14,16 @@ class Office extends Model
         'address_id',
         'primary_employee_id',
     ];
-    
-    public function address(){
+
+    public function address() {
         return $this->belongsTo(Address::class);
     }
 
-    public function department(){
+    public function primary_employee() {
+        return $this->belongsTo(Employee::class, 'primary_employee_id');
+    }
+
+    public function department() {
         return $this->hasMany(Office::class);
     }
 }

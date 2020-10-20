@@ -16,7 +16,7 @@ class CreateRoomsTable extends Migration
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
             $table->text('identifier');
-            $table->foreignId('room_type_id')->constrained();
+            $table->foreignId('room_type_id')->nullable()->constrained();
             $table->timestampsTz();
         });
     }
